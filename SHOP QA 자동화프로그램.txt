@@ -1,0 +1,22 @@
+-------------------------------------장바구니------------------------------------
+1. samsung.com/${index} -> UI로 선택 가능하게 만들기
+2. https://www.samsung.com/${index}/smartphones/galaxy-s23-ultra/buy/ 진입
+3. continue 버튼 클릭 
+4. continue 버튼 클릭
+5. 여기서 f12 누르기
+6. omnibug 탭 열고 확장프로그램 구현
+7. 5초 기다리기
+8. Page View > GA4 열기
+9. 내용 복붙
+10. 열 엑셀 파일 선택
+11. H1열에 붙여넣기
+12. VLOOKUP 함수 실행
+----------------------------------주문하기---------------------------------------
+13. https://www.samsung.com/${index}/smartphones/galaxy-s23-ultra/buy/에서 
+paynow 버튼 클릭
+14. 로그인 페이지로 리다이렉션
+15. Continue as guest 버튼 클릭
+16. 맨마지막 Event1 Data(allEventData) 복사
+17. 엑셀 파일 G12열에 붙여넣기
+18. VLOOKUP 함수 실행
+=================================================
