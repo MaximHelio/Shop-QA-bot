@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  div 
+    label URL
+    each item, index in sites
+      div.item
+        input(type="radio" id="site" + index name="url" value=item.id)
+        label(for="site" + index) #{item.getStartUrl()}
+  div(style="margin-top: 30px;")
+    button(type="button" onclick="startBot()") Start Bot!
+
+
+  script(type='text/javascript' src='/javascripts/common.js')

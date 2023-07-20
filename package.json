@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "exceljs": "^4.3.0",
+    "selenium-webdriver": "^4.10.0"
+  }
+}
