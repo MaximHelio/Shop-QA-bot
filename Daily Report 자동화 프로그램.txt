@@ -1,0 +1,17 @@
+---------------------------------AA-------------------------------------------------
+1. https://experience.adobe.com/#/@samsung/so:samsun0/analytics/spa/#/workspace/edit/6479f0ad6ff08f0fdf84108b 접속
+2. MST 국가의 Collapse 버튼 클릭
+3. Pageview by Track 우클릭
+4. Download Items as CSV(All Page..) 클릭
+5. 다운받은 파일 들어가기
+
+--------------------------------UA---------------------------------------
+1. https://analytics.google.com/analytics/web/#/my-reports/5E6U5v8RRB6_OWhegCkS7w/a100137701w157685169p159181417/_r.tabId=1245&1245-table.plotKeys=%5B%5D&1245-table.rowStart=0&1245-table.rowCount=500/ 접속
+2. Customization > Custom Reports 클릭
+3. DE_Pageview 클릭
+4. aem/shop-pagetrack 탭 클릭
+5. rows수 500으로 변환
+6. 5초 기다리기
+6. Exprt Google sheet 클릭
+
+--------------------------------GA------------------------------------

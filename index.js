@@ -22,7 +22,54 @@ const ExcelJS = require('exceljs');
     // Smartphones 버튼 클릭
     const smartphonesButton = await driver.findElement(By.xpath("//a[contains(text(), 'mart')]")); // Smartphones 에서 mart
     await smartphonesButton.click();
-    
+    // 크롬 개발자 도구 열기
+    function openDevTools() {
+      return new Promise((resolve) => {
+        // 개발자 도구를 열기 위해 F12 키 입력 (키 입력은 시각적으로 표시되지 않습니다)
+        window.addEventListener('keydown', function f12Listener(event) {
+          if (event.keyCode === 123) {
+            window.removeEventListener('keydown', f12Listener);
+            resolve();
+          }
+        });
+        const event = new Event('keydown');
+        event.keyCode = 123; // F12 키의 keyCode는 123입니다.
+        window.dispatchEvent(event);
+      });
+    }
+
+    // 크롬 개발자 도구의 Network 탭에서 요청 정보 가져오기
+    function getNetworkRequests() {
+      const requests = [];
+
+      // 모든 네트워크 요청 정보 가져오기
+      const entries = window.performance.getEntriesByType('resource');
+
+      // 각 요청 정보를 객체로 변환하여 배열에 추가
+      entries.forEach((entry) => {
+        const request = {
+          url: entry.name,
+          method: entry.initiatorType,
+          status: entry.decodedBodySize,
+          startTime: entry.startTime,
+          endTime: entry.responseEnd,
+        };
+        requests.push(request);
+      });
+
+      return requests;
+    }
+
+    // 예제 실행 함수
+    async function runExample() {
+      await openDevTools();
+      const networkRequests = getNetworkRequests();
+      console.log(networkRequests);
+    }
+
+    // 예제 실행
+    runExample();
+
     
     /**
      * omnibug 탭 열어서 글자 복사
